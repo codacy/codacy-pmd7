@@ -17,7 +17,7 @@ workflows:
             sbt "scalafmt / test;
                  Test / scalafmt / test;
                  set Docker / version := \"latest\";
-                 Docker / publishLocal;"
+                 Docker / publish;"
             docker save --output docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
           persist_to_workspace: true
           cache_prefix: sbt-cache-13092024
