@@ -1,6 +1,6 @@
 {
   "name" : "pmd7",
-  "version" : "7.5.0",
+  "version" : "7.6.0",
   "patterns" : [ {
     "patternId" : "category_apex_bestpractices_ApexAssertionsShouldIncludeMessage",
     "level" : "Warning",
