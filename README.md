@@ -1,5 +1,5 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d0f04e048bba4a01a7ef0166bf5b8d32)](https://www.codacy.com/gh/codacy/codacy-pmd?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/codacy-pmd&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://circleci.com/gh/codacy/codacy-pmd.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-pmd)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d0f04e048bba4a01a7ef0166bf5b8d32)](https://www.codacy.com/gh/codacy/codacy-pmd7?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/codacy-pmd7&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://circleci.com/gh/codacy/codacy-pmd7.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-pmd7)
 
 # Codacy PMD
 
