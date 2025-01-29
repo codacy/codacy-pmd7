@@ -16,9 +16,9 @@ workflows:
             sbt "runMain com.codacy.pmd.DocGenerator"
             sbt "scalafmt / test;
                  Test / scalafmt / test;
-                 set Docker / version := \"latest\";
+                 set Docker / version := \"dev\";
                  Docker / publishLocal;"
-            docker save --output docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
+            docker save --output docker-image.tar $CIRCLE_PROJECT_REPONAME:dev
           persist_to_workspace: true
           cache_prefix: sbt-cache-13092024
           requires:
