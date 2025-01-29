@@ -347,8 +347,8 @@
   "description" : "Use ArrayList instead of Vector",
   "parameters" : [ ]
 }, {
-  "patternId" : "category_java_performance_TooFewBranchesForASwitchStatement",
-  "title" : "Too Few Branches For A Switch Statement",
+  "patternId" : "category_java_performance_TooFewBranchesForSwitch",
+  "title" : "Too Few Branches For Switch",
   "description" : "A switch with less than three branches is inefficient, use a 'if statement' instead.",
   "parameters" : [ {
     "name" : "minimumNumberCaseForASwitch",
@@ -492,7 +492,7 @@
 }, {
   "patternId" : "category_java_errorprone_UselessOperationOnImmutable",
   "title" : "Useless Operation On Immutable",
-  "description" : "An operation on an Immutable object (String, BigDecimal or BigInteger) won't change the object itself",
+  "description" : "The result of an operation on an immutable object is ignored",
   "parameters" : [ ]
 }, {
   "patternId" : "category_java_errorprone_UseProperClassLoader",
@@ -634,9 +634,9 @@
   "description" : "The field ''{0}'' of serializable class ''{1}'' is of non-serializable type ''{2}''.",
   "parameters" : [ ]
 }, {
-  "patternId" : "category_java_errorprone_NonCaseLabelInSwitchStatement",
-  "title" : "Non Case Label In Switch Statement",
-  "description" : "A non-case label was present in a switch statement",
+  "patternId" : "category_java_errorprone_NonCaseLabelInSwitch",
+  "title" : "Non Case Label In Switch",
+  "description" : "A non-case label was present in a switch statement or expression",
   "parameters" : [ ]
 }, {
   "patternId" : "category_java_errorprone_MoreThanOneLogger",
@@ -1128,7 +1128,7 @@
 }, {
   "patternId" : "category_java_design_CouplingBetweenObjects",
   "title" : "Coupling Between Objects",
-  "description" : "High amount of different objects as members denotes a high coupling",
+  "description" : "A value of {0} may denote a high amount of coupling within the class (threshold: {1})",
   "parameters" : [ ]
 }, {
   "patternId" : "category_java_design_CollapsibleIfStatements",
@@ -1530,7 +1530,7 @@
 }, {
   "patternId" : "category_java_codestyle_BooleanGetMethodName",
   "title" : "Boolean Get Method Name",
-  "description" : "A 'getX()' method which returns a boolean should be named 'isX()'",
+  "description" : "A 'getX()' method which returns a boolean or Boolean should be named 'isX()'",
   "parameters" : [ {
     "name" : "checkParameterizedMethods",
     "description" : "Check parameterized methods"
@@ -1621,14 +1621,42 @@
   "description" : "Unnecessary explicit array creation for varargs method call",
   "parameters" : [ ]
 }, {
+  "patternId" : "category_java_bestpractices_UnitTestShouldUseTestAnnotation",
+  "title" : "Unit Test Should Use Test Annotation",
+  "description" : "Unit tests should use the @Test annotation or won't be run. In case of JUnit 5, test methods might use @RepeatedTest, @TestFactory, @TestTemplate or @ParameterizedTest annotations instead.",
+  "parameters" : [ {
+    "name" : "testClassPattern",
+    "description" : "The regex pattern used to identify test classes"
+  } ]
+}, {
+  "patternId" : "category_java_bestpractices_UnitTestShouldUseBeforeAnnotation",
+  "title" : "Unit Test Should Use Before Annotation",
+  "description" : "Apply the correct annotation if this method is used to set up the tests",
+  "parameters" : [ ]
+}, {
+  "patternId" : "category_java_bestpractices_UnitTestShouldUseAfterAnnotation",
+  "title" : "Unit Test Should Use After Annotation",
+  "description" : "Apply the correct annotation if this method is used to clean up the tests",
+  "parameters" : [ ]
+}, {
+  "patternId" : "category_java_bestpractices_UnitTestShouldIncludeAssert",
+  "title" : "Unit Test Should Include Assert",
+  "description" : "This unit test should include assert() or fail()",
+  "parameters" : [ ]
+}, {
+  "patternId" : "category_java_bestpractices_UnitTestContainsTooManyAsserts",
+  "title" : "Unit Test Contains Too Many Asserts",
+  "description" : "Unit tests should not contain more than ${maximumAsserts} assert(s).",
+  "parameters" : [ ]
+}, {
+  "patternId" : "category_java_bestpractices_UnitTestAssertionsShouldIncludeMessage",
+  "title" : "Unit Test Assertions Should Include Message",
+  "description" : "Unit test assertions should include a message",
+  "parameters" : [ ]
+}, {
   "patternId" : "category_java_bestpractices_SystemPrintln",
   "title" : "System Println",
   "description" : "Usage of System.out/err",
-  "parameters" : [ ]
-}, {
-  "patternId" : "category_java_bestpractices_SwitchStmtsShouldHaveDefault",
-  "title" : "Switch Stmts Should Have Default",
-  "description" : "Switch statements should be exhaustive, add a default case (or missing enum branches)",
   "parameters" : [ ]
 }, {
   "patternId" : "category_java_bestpractices_SimplifiableTestAssertion",
@@ -1669,6 +1697,11 @@
     "description" : "If true, mark combined declaration even if the declarations are on separate lines."
   } ]
 }, {
+  "patternId" : "category_java_bestpractices_NonExhaustiveSwitch",
+  "title" : "Non Exhaustive Switch",
+  "description" : "Switch statements or expressions should be exhaustive, add a default case (or missing enum branches)",
+  "parameters" : [ ]
+}, {
   "patternId" : "category_java_bestpractices_MissingOverride",
   "title" : "Missing Override",
   "description" : "The method ''{0}'' is missing an @Override annotation.",
@@ -1694,42 +1727,9 @@
   "description" : "In JUnit4, use the @Test(expected) annotation to denote tests that should throw exceptions",
   "parameters" : [ ]
 }, {
-  "patternId" : "category_java_bestpractices_JUnitTestsShouldIncludeAssert",
-  "title" : "JUnit Tests Should Include Assert",
-  "description" : "JUnit tests should include assert() or fail()",
-  "parameters" : [ ]
-}, {
-  "patternId" : "category_java_bestpractices_JUnitTestContainsTooManyAsserts",
-  "title" : "JUnit Test Contains Too Many Asserts",
-  "description" : "Unit tests should not contain more than ${maximumAsserts} assert(s).",
-  "parameters" : [ ]
-}, {
-  "patternId" : "category_java_bestpractices_JUnitAssertionsShouldIncludeMessage",
-  "title" : "JUnit Assertions Should Include Message",
-  "description" : "JUnit assertions should include a message",
-  "parameters" : [ ]
-}, {
   "patternId" : "category_java_bestpractices_JUnit5TestShouldBePackagePrivate",
   "title" : "JUnit5Test Should Be Package Private",
   "description" : "JUnit 5 tests should be package-private.",
-  "parameters" : [ ]
-}, {
-  "patternId" : "category_java_bestpractices_JUnit4TestShouldUseTestAnnotation",
-  "title" : "JUnit4 Test Should Use Test Annotation",
-  "description" : "Unit tests that execute tests should use the @Test annotation. In case of JUnit 5, test methods might use @RepeatedTest, @TestFactory, @TestTemplate or @ParameterizedTest annotations instead.",
-  "parameters" : [ {
-    "name" : "testClassPattern",
-    "description" : "The regex pattern used to identify test classes"
-  } ]
-}, {
-  "patternId" : "category_java_bestpractices_JUnit4TestShouldUseBeforeAnnotation",
-  "title" : "JUnit4 Test Should Use Before Annotation",
-  "description" : "JUnit 4 tests that set up tests should use the @Before annotation, JUnit5 tests should use @BeforeEach or @BeforeAll",
-  "parameters" : [ ]
-}, {
-  "patternId" : "category_java_bestpractices_JUnit4TestShouldUseAfterAnnotation",
-  "title" : "JUnit4 Test Should Use After Annotation",
-  "description" : "JUnit 4 tests that clean up tests should use the @After annotation, JUnit5 tests should use @AfterEach or @AfterAll",
   "parameters" : [ ]
 }, {
   "patternId" : "category_java_bestpractices_JUnit4SuitesShouldUseSuiteAnnotation",
@@ -1760,9 +1760,9 @@
   "description" : "Double-brace initialization should be avoided",
   "parameters" : [ ]
 }, {
-  "patternId" : "category_java_bestpractices_DefaultLabelNotLastInSwitchStmt",
-  "title" : "Default Label Not Last In Switch Stmt",
-  "description" : "The default label should be the last label in a switch statement",
+  "patternId" : "category_java_bestpractices_DefaultLabelNotLastInSwitch",
+  "title" : "Default Label Not Last In Switch",
+  "description" : "The default label should be the last label in a switch statement or expression",
   "parameters" : [ ]
 }, {
   "patternId" : "category_java_bestpractices_ConstantsInInterface",
@@ -2236,6 +2236,11 @@
   "patternId" : "category_apex_bestpractices_UnusedLocalVariable",
   "title" : "Unused Local Variable",
   "description" : "Variable ''{0}'' defined but not used",
+  "parameters" : [ ]
+}, {
+  "patternId" : "category_apex_bestpractices_QueueableWithoutFinalizer",
+  "title" : "Queueable Without Finalizer",
+  "description" : "This Queueable doesn't attach a Finalizer",
   "parameters" : [ ]
 }, {
   "patternId" : "category_apex_bestpractices_DebugsShouldUseLoggingLevel",

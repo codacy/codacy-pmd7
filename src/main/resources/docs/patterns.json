@@ -1,6 +1,6 @@
 {
   "name" : "pmd7",
-  "version" : "7.6.0",
+  "version" : "7.9.0",
   "patterns" : [ {
     "patternId" : "category_apex_bestpractices_ApexAssertionsShouldIncludeMessage",
     "level" : "Warning",
@@ -58,6 +58,13 @@
       "name" : "strictMode",
       "default" : "false"
     } ],
+    "languages" : [ "Apex" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_apex_bestpractices_QueueableWithoutFinalizer",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : false
   }, {
@@ -714,7 +721,7 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_bestpractices_DefaultLabelNotLastInSwitchStmt",
+    "patternId" : "category_java_bestpractices_DefaultLabelNotLastInSwitch",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
@@ -759,57 +766,12 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_bestpractices_JUnit4TestShouldUseAfterAnnotation",
-    "level" : "Warning",
-    "category" : "CodeStyle",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_java_bestpractices_JUnit4TestShouldUseBeforeAnnotation",
-    "level" : "Warning",
-    "category" : "CodeStyle",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_java_bestpractices_JUnit4TestShouldUseTestAnnotation",
-    "level" : "Warning",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "testClassPattern",
-      "default" : "Test"
-    } ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
     "patternId" : "category_java_bestpractices_JUnit5TestShouldBePackagePrivate",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ "Java" ],
     "enabled" : false
-  }, {
-    "patternId" : "category_java_bestpractices_JUnitAssertionsShouldIncludeMessage",
-    "level" : "Warning",
-    "category" : "CodeStyle",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_java_bestpractices_JUnitTestContainsTooManyAsserts",
-    "level" : "Warning",
-    "category" : "CodeStyle",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_java_bestpractices_JUnitTestsShouldIncludeAssert",
-    "level" : "Warning",
-    "category" : "CodeStyle",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : true
   }, {
     "patternId" : "category_java_bestpractices_JUnitUseExpected",
     "level" : "Warning",
@@ -840,6 +802,13 @@
     "enabled" : false
   }, {
     "patternId" : "category_java_bestpractices_MissingOverride",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_bestpractices_NonExhaustiveSwitch",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
@@ -898,17 +867,55 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_bestpractices_SwitchStmtsShouldHaveDefault",
-    "level" : "Warning",
-    "category" : "CodeStyle",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : true
-  }, {
     "patternId" : "category_java_bestpractices_SystemPrintln",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_bestpractices_UnitTestAssertionsShouldIncludeMessage",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_bestpractices_UnitTestContainsTooManyAsserts",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_bestpractices_UnitTestShouldIncludeAssert",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_bestpractices_UnitTestShouldUseAfterAnnotation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_bestpractices_UnitTestShouldUseBeforeAnnotation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_bestpractices_UnitTestShouldUseTestAnnotation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "testClassPattern",
+      "default" : "Test"
+    } ],
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
@@ -2240,12 +2247,12 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_errorprone_NonCaseLabelInSwitchStatement",
+    "patternId" : "category_java_errorprone_NonCaseLabelInSwitch",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ "Java" ],
-    "enabled" : true
+    "enabled" : false
   }, {
     "patternId" : "category_java_errorprone_NonSerializableClass",
     "level" : "Warning",
@@ -2634,7 +2641,7 @@
     "languages" : [ "Java" ],
     "enabled" : true
   }, {
-    "patternId" : "category_java_performance_TooFewBranchesForASwitchStatement",
+    "patternId" : "category_java_performance_TooFewBranchesForSwitch",
     "level" : "Warning",
     "category" : "Performance",
     "parameters" : [ {
