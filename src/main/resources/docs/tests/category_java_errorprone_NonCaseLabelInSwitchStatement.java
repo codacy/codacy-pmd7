@@ -6,7 +6,7 @@ public class Foo {
      case 1:
        // do something
        break;
-       //#Warn: category_java_errorprone_NonCaseLabelInSwitchStatement
+     //#Warn: category_java_errorprone_NonCaseLabelInSwitchStatement
      mylabel: // this is legal, but confusing!
        break;
      default:

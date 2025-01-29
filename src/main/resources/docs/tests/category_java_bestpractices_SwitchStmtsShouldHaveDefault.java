@@ -4,8 +4,8 @@ public class Foo {
     public void bar() {
         int x = 2;
         int j = 0;
-        //#Warn: category_java_bestpractices_SwitchStmtsShouldHaveDefault
         switch (x) {
+            //#Warn: category_java_bestpractices_SwitchStmtsShouldHaveDefault
             case 1:
                 j = 6;
             case 2:
