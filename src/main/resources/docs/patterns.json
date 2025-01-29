@@ -813,7 +813,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ "Java" ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "category_java_bestpractices_OneDeclarationPerLine",
     "level" : "Warning",
@@ -2252,7 +2252,7 @@
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ "Java" ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "category_java_errorprone_NonSerializableClass",
     "level" : "Warning",

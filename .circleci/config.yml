@@ -26,7 +26,6 @@ workflows:
       - codacy_plugins_test/run:
           name: plugins_test
           run_multiple_tests: true
-          cache_prefix: sbt-cache-13092024
           requires:
             - publish_docker_local
       - codacy/publish_docker:
