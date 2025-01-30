@@ -13,7 +13,7 @@ workflows:
       - codacy/sbt:
           name: publish_docker_local
           cmd: |
-            sbt "scalafmt;
+            sbt "Test / scalafmt / test;
                  set Docker / version := \"latest\";
                  Docker / publishLocal;"
             docker save --output docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
