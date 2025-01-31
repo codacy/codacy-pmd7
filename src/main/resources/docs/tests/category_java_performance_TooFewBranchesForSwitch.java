@@ -1,9 +1,9 @@
-//#Patterns: category_java_performance_TooFewBranchesForASwitchStatement
+//#Patterns: category_java_performance_TooFewBranchesForSwitch
 
 
 public class Foo {
     public void bar() {
-//#Warn: category_java_performance_TooFewBranchesForASwitchStatement
+//#Warn: category_java_performance_TooFewBranchesForSwitch
         switch (condition) {
             case ONE:
                 instruction;

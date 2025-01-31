@@ -1,10 +1,10 @@
-//#Patterns: category_java_bestpractices_SwitchStmtsShouldHaveDefault
+//#Patterns: category_java_bestpractices_NonExhaustiveSwitch
 
 public class Foo {
     public void bar() {
         int x = 2;
         int j = 0;
-        //#Warn: category_java_bestpractices_SwitchStmtsShouldHaveDefault
+        //#Warn: category_java_bestpractices_NonExhaustiveSwitch
         switch (x) {
             case 1:
                 j = 6;

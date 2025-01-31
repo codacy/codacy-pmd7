@@ -1,0 +1,28 @@
+Since: PMD 4.0
+
+This rule detects methods called `tearDown()` that are not properly annotated as a cleanup method.
+This is primarily intended to assist in upgrading from JUnit 3, where tear down methods were required to be called `tearDown()`.
+To a lesser extent, this may help detect omissions even under newer JUnit versions or under TestNG,
+as long as you are following this convention to name the methods.
+
+* JUnit 4 will only execute methods annotated with `@After` after running each test.
+* JUnit 5 introduced `@AfterEach` and `@AfterAll` annotations to execute methods after each test or after
+  all tests in the class, respectively.
+* TestNG provides the annotations `@AfterMethod` and `@AfterClass` to execute methods after each test or after
+  tests in the class, respectively.
+
+Note: This rule was named JUnit4TestShouldUseAfterAnnotation before PMD 7.7.0.
+
+Example(s):
+```
+public class MyTest {
+    public void tearDown() {
+        bad();
+    }
+}
+public class MyTest2 {
+    @After public void tearDown() {
+        good();
+    }
+}
+```
