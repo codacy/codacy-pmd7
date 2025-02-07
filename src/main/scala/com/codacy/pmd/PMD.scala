@@ -44,7 +44,6 @@ object PMD extends Tool {
     }
 
     // Files could be empty when given explicitly by configuration a set of empty files to run.
-    // Confirm what happens in this case / what is the else that is missing from this flow (?)
     if (!filesStr.isEmpty) {
       pmdConfig.setInputPathList(filesStr)
     }
@@ -52,13 +51,9 @@ object PMD extends Tool {
     // Side effectful code to make a pmdConfig with rules which at the start is null:
     configuration match {
       case Some(config) =>
-        // If given patterns are empty, we generete a xml with some xml headers,
-        // but rules obviously are none. Don't know if or how it fails, needs testing here.
-        // Probably we want to protected here since the code inside
-        // RulesetsFactoryUtils.getRuleSets checks if rules are != 0...
         configFile(config) match {
           case Success(ruleset) =>
-            pmdConfig.setRuleSets(Arrays.asList(ruleset.toString))
+            pmdConfig.setRuleSets(ruleset.toString)
 
           case Failure(_) =>
         }
@@ -73,10 +68,10 @@ object PMD extends Tool {
           .fold {
             configFile(DefaultPatterns.list.map(patternId => Pattern.Definition(Pattern.Id(patternId))))
               .foreach { defaultCodacyRuleSetFile =>
-                pmdConfig.setRuleSets(Arrays.asList(defaultCodacyRuleSetFile.toString))
+                pmdConfig.setRuleSets(defaultCodacyRuleSetFile.toString)
               }
           } { ruleset =>
-            pmdConfig.setRuleSets(Arrays.asList(ruleset.toString))
+            pmdConfig.setRuleSets(ruleset.toString)
           }
     }
 
@@ -103,7 +98,6 @@ object PMD extends Tool {
         pmdAnalysis.performAnalysis()
 
         val ruleViolations = codacyRenderer.getRulesViolations.asScala.view.flatMap { violation =>
-          //println(s"Violation: ${violation.getDescription} in ${violation.getFileId.getFileName.toString}")
           patternIdByRuleNameAndRuleSet(
             violation.getRule.getLanguage.getId,
             violation.getRule.getName,
