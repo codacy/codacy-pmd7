@@ -32,15 +32,14 @@ object PMD extends Tool {
     val pmdConfig = new PMDConfiguration()
     pmdConfig.setIgnoreIncrementalAnalysis(true)
 
-    val filesStr: java.util.List[java.nio.file.Path] = files match {
+    val filesStr = files match {
       case None =>
-        Arrays.asList(Paths.get(source.path))
+        source.path
       case Some(files) =>
         files
-          .map(file => Paths.get(file.path))
-          .filter(path => !Languages.invalidExtensions.exists(path.toString.endsWith))
-          .toList
-          .asJava
+        .map(_.path)
+        .filter(filename => !Languages.invalidExtensions.exists(filename.endsWith))
+        .mkString(",")
     }
 
     // Files could be empty when given explicitly by configuration a set of empty files to run.
@@ -53,7 +52,7 @@ object PMD extends Tool {
       case Some(config) =>
         configFile(config) match {
           case Success(ruleset) =>
-            pmdConfig.setRuleSets(Arrays.asList(ruleset.toString))
+            pmdConfig.setRuleSets(ruleset.toString)
 
           case Failure(_) =>
         }
@@ -68,7 +67,7 @@ object PMD extends Tool {
           .fold {
             configFile(DefaultPatterns.list.map(patternId => Pattern.Definition(Pattern.Id(patternId))))
               .foreach { defaultCodacyRuleSetFile =>
-                pmdConfig.setRuleSets(Arrays.asList(defaultCodacyRuleSetFile.toString))
+                pmdConfig.setRuleSets(defaultCodacyRuleSetFile.toString)
               }
           } { ruleset =>
             pmdConfig.setRuleSets(ruleset.toString)
@@ -77,13 +76,13 @@ object PMD extends Tool {
 
     // Check that we defined the rules to run, if not getRuleSets is null, we should terminate since this is an error.
     // Forcing a RETURN. This should only happen when we failed to generate a temporary configuration file.
-    if (pmdConfig.getRuleSetPaths == null) {
+    if (pmdConfig.getRuleSets == null) {
       return Failure(new Exception("No rulesets were configured to initialize PMD tool"))
     }
 
     // Load the RuleSets
     val ruleSetLoader = RuleSetLoader.fromPmdConfig(pmdConfig)
-    val ruleSetsOpt = Option(ruleSetLoader.loadFromResources(pmdConfig.getRuleSetPaths))
+    val ruleSetsOpt = Option(ruleSetLoader.loadFromResources(pmdConfig.getRuleSets))
 
     ruleSetsOpt.fold[Try[List[Result]]] {
       Failure(new Exception("No rulesets found"))
