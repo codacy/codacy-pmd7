@@ -53,7 +53,7 @@ object PMD extends Tool {
       case Some(config) =>
         configFile(config) match {
           case Success(ruleset) =>
-            pmdConfig.setRuleSets(ruleset.toString)
+            pmdConfig.setRuleSets(Arrays.asList(ruleset.toString))
 
           case Failure(_) =>
         }
@@ -68,7 +68,7 @@ object PMD extends Tool {
           .fold {
             configFile(DefaultPatterns.list.map(patternId => Pattern.Definition(Pattern.Id(patternId))))
               .foreach { defaultCodacyRuleSetFile =>
-                pmdConfig.setRuleSets(Arrays.asList(defaultCodacyRuleSetFile))
+                pmdConfig.setRuleSets(Arrays.asList(defaultCodacyRuleSetFile.toString))
               }
           } { ruleset =>
             pmdConfig.setRuleSets(ruleset.toString)
