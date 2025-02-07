@@ -68,7 +68,7 @@ object PMD extends Tool {
           .fold {
             configFile(DefaultPatterns.list.map(patternId => Pattern.Definition(Pattern.Id(patternId))))
               .foreach { defaultCodacyRuleSetFile =>
-                pmdConfig.setRuleSets(defaultCodacyRuleSetFile.toString)
+                pmdConfig.setRuleSets(Arrays.asList(defaultCodacyRuleSetFile))
               }
           } { ruleset =>
             pmdConfig.setRuleSets(ruleset.toString)
