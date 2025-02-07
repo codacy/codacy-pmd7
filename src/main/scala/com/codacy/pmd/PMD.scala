@@ -32,17 +32,19 @@ object PMD extends Tool {
     val pmdConfig = new PMDConfiguration()
     pmdConfig.setIgnoreIncrementalAnalysis(true)
 
-    val filesStr = files match {
+    val filesStr: java.util.List[java.nio.file.Path] = files match {
       case None =>
-        source.path
+        Arrays.asList(Paths.get(source.path))
       case Some(files) =>
         files
-        .map(_.path)
-        .filter(filename => !Languages.invalidExtensions.exists(filename.endsWith))
-        .mkString(",")
+          .map(file => Paths.get(file.path))
+          .filter(path => !Languages.invalidExtensions.exists(path.toString.endsWith))
+          .toList
+          .asJava
     }
 
     // Files could be empty when given explicitly by configuration a set of empty files to run.
+    // Confirm what happens in this case / what is the else that is missing from this flow (?)
     if (!filesStr.isEmpty) {
       pmdConfig.setInputPathList(filesStr)
     }
@@ -50,9 +52,13 @@ object PMD extends Tool {
     // Side effectful code to make a pmdConfig with rules which at the start is null:
     configuration match {
       case Some(config) =>
+        // If given patterns are empty, we generete a xml with some xml headers,
+        // but rules obviously are none. Don't know if or how it fails, needs testing here.
+        // Probably we want to protected here since the code inside
+        // RulesetsFactoryUtils.getRuleSets checks if rules are != 0...
         configFile(config) match {
           case Success(ruleset) =>
-            pmdConfig.setRuleSets(ruleset.toString)
+            pmdConfig.setRuleSets(Arrays.asList(ruleset.toString))
 
           case Failure(_) =>
         }
@@ -67,22 +73,22 @@ object PMD extends Tool {
           .fold {
             configFile(DefaultPatterns.list.map(patternId => Pattern.Definition(Pattern.Id(patternId))))
               .foreach { defaultCodacyRuleSetFile =>
-                pmdConfig.setRuleSets(defaultCodacyRuleSetFile.toString)
+                pmdConfig.setRuleSets(Arrays.asList(defaultCodacyRuleSetFile.toString))
               }
           } { ruleset =>
-            pmdConfig.setRuleSets(ruleset.toString)
+            pmdConfig.setRuleSets(Arrays.asList(ruleset.toString))
           }
     }
 
     // Check that we defined the rules to run, if not getRuleSets is null, we should terminate since this is an error.
     // Forcing a RETURN. This should only happen when we failed to generate a temporary configuration file.
-    if (pmdConfig.getRuleSets == null) {
+    if (pmdConfig.getRuleSetPaths == null) {
       return Failure(new Exception("No rulesets were configured to initialize PMD tool"))
     }
 
     // Load the RuleSets
     val ruleSetLoader = RuleSetLoader.fromPmdConfig(pmdConfig)
-    val ruleSetsOpt = Option(ruleSetLoader.loadFromResources(pmdConfig.getRuleSets))
+    val ruleSetsOpt = Option(ruleSetLoader.loadFromResources(pmdConfig.getRuleSetPaths))
 
     ruleSetsOpt.fold[Try[List[Result]]] {
       Failure(new Exception("No rulesets found"))
@@ -97,6 +103,7 @@ object PMD extends Tool {
         pmdAnalysis.performAnalysis()
 
         val ruleViolations = codacyRenderer.getRulesViolations.asScala.view.flatMap { violation =>
+          //println(s"Violation: ${violation.getDescription} in ${violation.getFileId.getFileName.toString}")
           patternIdByRuleNameAndRuleSet(
             violation.getRule.getLanguage.getId,
             violation.getRule.getName,
