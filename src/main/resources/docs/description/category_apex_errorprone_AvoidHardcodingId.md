@@ -1,8 +1,8 @@
 Since: PMD 6.0.0
 
 When deploying Apex code between sandbox and production environments, or installing Force.com AppExchange packages,
-it is essential to avoid hardcoding IDs in the Apex code. By doing so, if the record IDs change between environments,
-the logic can dynamically identify the proper data to operate against and not fail.
+      it is essential to avoid hardcoding IDs in the Apex code. By doing so, if the record IDs change between environments,
+      the logic can dynamically identify the proper data to operate against and not fail.
 
 Example(s):
 ```

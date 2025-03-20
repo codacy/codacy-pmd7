@@ -10,9 +10,9 @@ Example(s):
 ```
 // With a minimumNumberCaseForASwitch of 3
 public class Foo {
-    public void bar() {
+    public void bar(int condition) {
         switch (condition) {
-            case ONE:
+            case 1:
                 instruction;
                 break;
             default:
