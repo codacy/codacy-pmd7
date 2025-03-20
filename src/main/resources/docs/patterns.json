@@ -1,6 +1,6 @@
 {
   "name" : "pmd7",
-  "version" : "7.9.0",
+  "version" : "7.11.0",
   "patterns" : [ {
     "patternId" : "category_apex_bestpractices_ApexAssertionsShouldIncludeMessage",
     "level" : "Warning",
@@ -278,6 +278,13 @@
     "enabled" : false
   }, {
     "patternId" : "category_apex_errorprone_AvoidNonExistentAnnotations",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Apex" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_apex_errorprone_AvoidStatefulDatabaseResult",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -729,6 +736,13 @@
     "enabled" : false
   }, {
     "patternId" : "category_java_bestpractices_DoubleBraceInitialization",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_bestpractices_ExhaustiveSwitchHasDefault",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],

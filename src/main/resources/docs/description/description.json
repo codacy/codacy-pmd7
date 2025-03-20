@@ -1755,6 +1755,11 @@
   "description" : "This 'for' loop can be replaced by a 'foreach' loop",
   "parameters" : [ ]
 }, {
+  "patternId" : "category_java_bestpractices_ExhaustiveSwitchHasDefault",
+  "title" : "Exhaustive Switch Has Default",
+  "description" : "The switch block is exhaustive even without the default case",
+  "parameters" : [ ]
+}, {
   "patternId" : "category_java_bestpractices_DoubleBraceInitialization",
   "title" : "Double Brace Initialization",
   "description" : "Double-brace initialization should be avoided",
@@ -2081,6 +2086,11 @@
     "name" : "allowExceptionNameRegex",
     "description" : "Empty blocks catching exceptions with names matching this regular expression will be skipped"
   } ]
+}, {
+  "patternId" : "category_apex_errorprone_AvoidStatefulDatabaseResult",
+  "title" : "Avoid Stateful Database Result",
+  "description" : "Using stateful `Database.[x]Result` instance variables can cause serialization errors between successive batch iterations.",
+  "parameters" : [ ]
 }, {
   "patternId" : "category_apex_errorprone_AvoidNonExistentAnnotations",
   "title" : "Avoid Non Existent Annotations",
