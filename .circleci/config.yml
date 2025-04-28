@@ -13,6 +13,7 @@ workflows:
       - codacy/sbt:
           name: publish_docker_local
           cmd: |
+            sbt "runMain com.codacy.pmd.DocGenerator"
             sbt "Test / scalafmt / test;
                  set Docker / version := \"latest\";
                  Docker / publishLocal;"
