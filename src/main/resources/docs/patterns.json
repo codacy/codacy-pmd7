@@ -1,6 +1,6 @@
 {
   "name" : "pmd7",
-  "version" : "7.11.0",
+  "version" : "7.16.0",
   "patterns" : [ {
     "patternId" : "category_apex_bestpractices_ApexAssertionsShouldIncludeMessage",
     "level" : "Warning",
@@ -161,6 +161,13 @@
     "patternId" : "category_apex_codestyle_WhileLoopsMustUseBraces",
     "level" : "Info",
     "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Apex" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_apex_design_AvoidBooleanMethodParameters",
+    "level" : "Warning",
+    "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : false
@@ -360,6 +367,13 @@
     "enabled" : false
   }, {
     "patternId" : "category_apex_errorprone_TestMethodsMustBeInTestClasses",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Apex" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_apex_errorprone_TypeShadowsBuiltInNamespace",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -773,6 +787,13 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
+    "patternId" : "category_java_bestpractices_ImplicitFunctionalInterface",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_bestpractices_JUnit4SuitesShouldUseSuiteAnnotation",
     "level" : "Warning",
     "category" : "CodeStyle",
@@ -934,6 +955,13 @@
     "enabled" : false
   }, {
     "patternId" : "category_java_bestpractices_UnnecessaryVarargsArrayCreation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_bestpractices_UnnecessaryWarningSuppression",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
@@ -2316,6 +2344,20 @@
       "name" : "staticLoggerName",
       "default" : "LOG"
     } ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_errorprone_ReplaceJavaUtilCalendar",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_errorprone_ReplaceJavaUtilDate",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
     "languages" : [ "Java" ],
     "enabled" : false
   }, {

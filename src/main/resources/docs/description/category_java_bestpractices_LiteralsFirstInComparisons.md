@@ -4,6 +4,9 @@ Position literals first in all String comparisons, if the second argument is nul
             can be avoided, they will just return false. Note that switching literal positions for compareTo and
             compareToIgnoreCase may change the result, see examples.
 
+            Note that compile-time constant strings are treated like literals. This is because they are inlined into
+            the class file, are necessarily non-null, and therefore cannot cause an NPE at runtime.
+
 Example(s):
 ```
 class Foo {
@@ -21,6 +24,11 @@ class Foo {
     }
     boolean bar(String x) {
         return x.contentEquals("bar"); // should be "bar".contentEquals(x)
+    }
+
+    static final String CONSTANT = "const";
+    {
+        CONSTANT.equals("literal"); // not reported, this is effectively the same as writing "const".equals("foo")
     }
 }
 ```

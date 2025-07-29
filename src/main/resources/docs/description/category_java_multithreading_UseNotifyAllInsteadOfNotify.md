@@ -1,7 +1,7 @@
 Since: PMD 3.0
 
 Thread.notify() awakens a thread monitoring the object. If more than one thread is monitoring, then only
-one is chosen.  The thread chosen is arbitrary; thus its usually safer to call notifyAll() instead.
+one is chosen.  The thread chosen is arbitrary; thus it's usually safer to call notifyAll() instead.
 
 Example(s):
 ```
