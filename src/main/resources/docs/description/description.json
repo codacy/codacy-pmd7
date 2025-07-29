@@ -595,6 +595,16 @@
   "description" : "Return an empty collection rather than 'null'.",
   "parameters" : [ ]
 }, {
+  "patternId" : "category_java_errorprone_ReplaceJavaUtilDate",
+  "title" : "Replace Java Util Date",
+  "description" : "Usage of java.util.Date should be replaced with classes from java.time",
+  "parameters" : [ ]
+}, {
+  "patternId" : "category_java_errorprone_ReplaceJavaUtilCalendar",
+  "title" : "Replace Java Util Calendar",
+  "description" : "Usage of java.util.Calendar should be replaced with classes from java.time",
+  "parameters" : [ ]
+}, {
   "patternId" : "category_java_errorprone_ProperLogger",
   "title" : "Proper Logger",
   "description" : "Logger should be defined private static final and have the correct class",
@@ -1616,6 +1626,11 @@
   "description" : "The value assigned to this variable is never used or always overwritten",
   "parameters" : [ ]
 }, {
+  "patternId" : "category_java_bestpractices_UnnecessaryWarningSuppression",
+  "title" : "Unnecessary Warning Suppression",
+  "description" : "Unused suppression {0}.",
+  "parameters" : [ ]
+}, {
   "patternId" : "category_java_bestpractices_UnnecessaryVarargsArrayCreation",
   "title" : "Unnecessary Varargs Array Creation",
   "description" : "Unnecessary explicit array creation for varargs method call",
@@ -1735,6 +1750,11 @@
   "patternId" : "category_java_bestpractices_JUnit4SuitesShouldUseSuiteAnnotation",
   "title" : "JUnit4Suites Should Use Suite Annotation",
   "description" : "JUnit 4 indicates test suites via annotations, not the suite method.",
+  "parameters" : [ ]
+}, {
+  "patternId" : "category_java_bestpractices_ImplicitFunctionalInterface",
+  "title" : "Implicit Functional Interface",
+  "description" : "Annotate this interface with @FunctionalInterface or with @SuppressWarnings(\"PMD.ImplicitFunctionalInterface\") to clarify your intent.",
   "parameters" : [ ]
 }, {
   "patternId" : "category_java_bestpractices_GuardLogStatement",
@@ -2030,6 +2050,11 @@
   "description" : "Avoid debug statements since they impact on performance",
   "parameters" : [ ]
 }, {
+  "patternId" : "category_apex_errorprone_TypeShadowsBuiltInNamespace",
+  "title" : "Type Shadows Built In Namespace",
+  "description" : "This name causes a collision with a class, enum, or interface used in the `{0}` namespace. Please choose a different name.",
+  "parameters" : [ ]
+}, {
   "patternId" : "category_apex_errorprone_TestMethodsMustBeInTestClasses",
   "title" : "Test Methods Must Be In Test Classes",
   "description" : "Test methods must be in test classes",
@@ -2175,6 +2200,11 @@
   "patternId" : "category_apex_design_AvoidDeeplyNestedIfStmts",
   "title" : "Avoid Deeply Nested If Stmts",
   "description" : "Deeply nested if..then statements are hard to read",
+  "parameters" : [ ]
+}, {
+  "patternId" : "category_apex_design_AvoidBooleanMethodParameters",
+  "title" : "Avoid Boolean Method Parameters",
+  "description" : "Avoid Boolean method parameters",
   "parameters" : [ ]
 }, {
   "patternId" : "category_apex_codestyle_WhileLoopsMustUseBraces",

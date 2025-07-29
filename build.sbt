@@ -3,18 +3,18 @@ import sjsonnew.BasicJsonProtocol._
 
 organization := "codacy"
 name := "codacy-pmd7"
-scalaVersion := "2.13.14"
+scalaVersion := "2.13.16"
 
 lazy val toolVersionKey = SettingKey[String]("version of the underlying tool")
-toolVersionKey := "7.11.0"
+toolVersionKey := "7.16.0"
 
 libraryDependencies ++= {
   val toolVersion = toolVersionKey.value
 
   Seq(
-    "com.typesafe.play" %% "play-json" % "2.7.4",
-    "com.codacy" %% "codacy-engine-scala-seed" % "5.0.1",
-    "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
+    "org.playframework" %% "play-json" % "3.0.5",
+    "com.codacy" %% "codacy-engine-scala-seed" % "6.1.5",
+    "org.scala-lang.modules" %% "scala-xml" % "1.3.0",
     "net.sourceforge.pmd" % "pmd-core" % toolVersion,
     "net.sourceforge.pmd" % "pmd-java" % toolVersion,
     "net.sourceforge.pmd" % "pmd-jsp" % toolVersion,
@@ -57,7 +57,7 @@ val dockerGroup = "docker"
 
 Docker / daemonUser := dockerUser
 Docker / daemonGroup := dockerGroup
-dockerBaseImage := "amazoncorretto:23-alpine3.20"
+dockerBaseImage := "amazoncorretto:24-alpine3.22"
 Compile / mainClass := Some("com.codacy.Engine")
 dockerEntrypoint := Seq("/sbin/tini", "-g", "--", s"/opt/docker/bin/${name.value}")
 dockerCommands := dockerCommands.value.flatMap {
