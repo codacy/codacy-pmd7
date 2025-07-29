@@ -422,6 +422,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "Cryptography",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : true
@@ -430,6 +431,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "Auth",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : true
@@ -438,6 +440,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "InsecureModulesLibraries",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : true
@@ -446,6 +449,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "Routes",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : true
@@ -454,6 +458,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "Routes",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : true
@@ -462,6 +467,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "SQLInjection",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : true
@@ -470,6 +476,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "InsecureModulesLibraries",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : true
@@ -478,6 +485,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "Auth",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : true
@@ -486,6 +494,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "XSS",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : true
@@ -494,6 +503,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "XSS",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
     "enabled" : true
@@ -2760,6 +2770,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "Cryptography",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Java" ],
     "enabled" : false
@@ -2768,6 +2779,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "Cryptography",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "Java" ],
     "enabled" : false
@@ -2846,6 +2858,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "UnexpectedBehaviour",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "JSP" ],
     "enabled" : true
@@ -2854,6 +2867,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "XSS",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "JSP" ],
     "enabled" : true
@@ -3143,6 +3157,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "CSRF",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "VisualForce" ],
     "enabled" : false
@@ -3151,6 +3166,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "XSS",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "VisualForce" ],
     "enabled" : false
@@ -3159,6 +3175,7 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "XSS",
+    "scanType" : "SAST",
     "parameters" : [ ],
     "languages" : [ "VisualForce" ],
     "enabled" : false

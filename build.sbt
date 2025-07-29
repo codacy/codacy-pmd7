@@ -13,7 +13,7 @@ libraryDependencies ++= {
 
   Seq(
     "org.playframework" %% "play-json" % "3.0.5",
-    "com.codacy" %% "codacy-engine-scala-seed" % "6.1.2",
+    "com.codacy" %% "codacy-engine-scala-seed" % "6.1.5",
     "org.scala-lang.modules" %% "scala-xml" % "1.3.0",
     "net.sourceforge.pmd" % "pmd-core" % toolVersion,
     "net.sourceforge.pmd" % "pmd-java" % toolVersion,
