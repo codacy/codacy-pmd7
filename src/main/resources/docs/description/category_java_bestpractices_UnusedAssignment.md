@@ -6,7 +6,7 @@ Reports assignments to variables that are never used before the variable is over
             2. The assigned value is always overwritten by other assignments before the next read of
             the variable.
 
-            The rule tracks assignements to fields of `this`, and static fields of the current class.
+            The rule tracks assignments to fields of `this`, and static fields of the current class.
             This may cause some false positives in timing-sensitive concurrent code, which the rule cannot detect.
 
             The rule may be suppressed with the standard `@SuppressWarnings(&quot;unused&quot;)` tag.

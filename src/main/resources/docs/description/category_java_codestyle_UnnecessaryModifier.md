@@ -22,7 +22,7 @@ public interface Foo {
 }
 public class Bar {
     public static interface Baz {}  // static ignored
-    public static enum FoorBar {    // static ignored
+    public static enum FooBar {    // static ignored
         FOO;
     }
 }

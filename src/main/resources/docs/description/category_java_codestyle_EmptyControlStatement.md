@@ -12,8 +12,8 @@ Reports control statements whose body is empty, as well as empty initializers.
             - initializers
             - blocks used as statements (for scoping)
 
-            This rule replaces the rules EmptyFinallyBlock, 
-            EmptyIfStmt, EmptyInitializer, EmptyStatementBlock, 
+            This rule replaces the rules EmptyFinallyBlock,
+            EmptyIfStmt, EmptyInitializer, EmptyStatementBlock,
             EmptySwitchStatements, EmptySynchronizedBlock, EmptyTryBlock, and EmptyWhileStmt.
 
             Notice that {% rule java/errorprone/EmptyCatchBlock %} is still an independent rule.

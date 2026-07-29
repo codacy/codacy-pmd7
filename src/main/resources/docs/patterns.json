@@ -1,6 +1,6 @@
 {
   "name" : "pmd7",
-  "version" : "7.16.0",
+  "version" : "7.26.0",
   "patterns" : [ {
     "patternId" : "category_apex_bestpractices_ApexAssertionsShouldIncludeMessage",
     "level" : "Warning",
@@ -31,6 +31,13 @@
     "enabled" : false
   }, {
     "patternId" : "category_apex_bestpractices_ApexUnitTestShouldNotUseSeeAllDataTrue",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Apex" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_apex_bestpractices_AvoidFutureAnnotation",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
@@ -70,6 +77,13 @@
   }, {
     "patternId" : "category_apex_bestpractices_UnusedLocalVariable",
     "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Apex" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_apex_codestyle_AnnotationsNamingConventions",
+    "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ "Apex" ],
@@ -193,13 +207,6 @@
     "languages" : [ "Apex" ],
     "enabled" : false
   }, {
-    "patternId" : "category_apex_design_ExcessiveClassLength",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "Apex" ],
-    "enabled" : true
-  }, {
     "patternId" : "category_apex_design_ExcessiveParameterList",
     "level" : "Warning",
     "category" : "ErrorProne",
@@ -214,21 +221,7 @@
     "languages" : [ "Apex" ],
     "enabled" : true
   }, {
-    "patternId" : "category_apex_design_NcssConstructorCount",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "Apex" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_apex_design_NcssMethodCount",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "Apex" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_apex_design_NcssTypeCount",
+    "patternId" : "category_apex_design_NcssCount",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -278,6 +271,13 @@
     "enabled" : false
   }, {
     "patternId" : "category_apex_errorprone_AvoidHardcodingId",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Apex" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_apex_errorprone_AvoidInterfaceAsMapKey",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -346,6 +346,13 @@
     "enabled" : false
   }, {
     "patternId" : "category_apex_errorprone_InaccessibleAuraEnabledGetter",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Apex" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_apex_errorprone_InvocableClassNoArgConstructor",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -686,6 +693,13 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
+    "patternId" : "category_java_bestpractices_AssertStatementInTest",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_bestpractices_AvoidMessageDigestField",
     "level" : "Warning",
     "category" : "CodeStyle",
@@ -766,6 +780,13 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
+    "patternId" : "category_java_bestpractices_EnumComparison",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_bestpractices_ExhaustiveSwitchHasDefault",
     "level" : "Warning",
     "category" : "CodeStyle",
@@ -811,7 +832,7 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_bestpractices_JUnit5TestShouldBePackagePrivate",
+    "patternId" : "category_java_bestpractices_JUnitJupiterTestShouldBePackagePrivate",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
@@ -822,6 +843,16 @@
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_bestpractices_LabeledStatement",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowLoops",
+      "default" : "true"
+    } ],
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
@@ -878,6 +909,13 @@
     "enabled" : false
   }, {
     "patternId" : "category_java_bestpractices_PrimitiveWrapperInstantiation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_bestpractices_RelianceOnDefaultCharset",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
@@ -991,6 +1029,13 @@
     "parameters" : [ ],
     "languages" : [ "Java" ],
     "enabled" : true
+  }, {
+    "patternId" : "category_java_bestpractices_UnusedLabel",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
   }, {
     "patternId" : "category_java_bestpractices_UnusedLocalVariable",
     "level" : "Warning",
@@ -1233,13 +1278,6 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_codestyle_GenericsNaming",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : true
-  }, {
     "patternId" : "category_java_codestyle_IdenticalCatchBranches",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1338,6 +1376,13 @@
     "languages" : [ "Java" ],
     "enabled" : true
   }, {
+    "patternId" : "category_java_codestyle_ModifierOrder",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_codestyle_NoPackage",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1420,6 +1465,13 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
+    "patternId" : "category_java_codestyle_TypeParameterNamingConventions",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_codestyle_UnnecessaryAnnotationValueElement",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1427,6 +1479,13 @@
       "name" : "java7Compatibility",
       "default" : "false"
     } ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_codestyle_UnnecessaryBlock",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
@@ -1465,7 +1524,7 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_codestyle_UnnecessaryLocalBeforeReturn",
+    "patternId" : "category_java_codestyle_UnnecessaryInterfaceDeclaration",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
@@ -1504,10 +1563,16 @@
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
+      "name" : "allowCasts",
+      "default" : "false"
+    }, {
       "name" : "allowCtors",
       "default" : "false"
     }, {
       "name" : "allowLiterals",
+      "default" : "false"
+    }, {
+      "name" : "allowLoopVariable",
       "default" : "false"
     } ],
     "languages" : [ "Java" ],
@@ -1544,14 +1609,24 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_design_AbstractClassWithoutAnyMethod",
-    "level" : "Warning",
-    "category" : "ErrorProne",
+    "patternId" : "category_java_codestyle_VariableCanBeInlined",
+    "level" : "Info",
+    "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_design_AvoidCatchingGenericException",
+    "patternId" : "category_java_codestyle_VariableDeclarationUsageDistance",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxDistance",
+      "default" : "7"
+    } ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_design_AbstractClassWithoutAnyMethod",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -1747,6 +1822,13 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
+    "patternId" : "category_java_design_PublicMemberInNonPublicType",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_design_SignatureDeclareThrowsException",
     "level" : "Warning",
     "category" : "ErrorProne",
@@ -1816,13 +1898,6 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_design_UseObjectForClearerAPI",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
     "patternId" : "category_java_design_UseUtilityClass",
     "level" : "Warning",
     "category" : "ErrorProne",
@@ -1858,6 +1933,13 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
+    "patternId" : "category_java_documentation_DanglingJavadoc",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_documentation_UncommentedEmptyConstructor",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1874,6 +1956,13 @@
     "parameters" : [ ],
     "languages" : [ "Java" ],
     "enabled" : true
+  }, {
+    "patternId" : "category_java_errorprone_AssertEqualsArgumentOrder",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
   }, {
     "patternId" : "category_java_errorprone_AssignmentInOperand",
     "level" : "Warning",
@@ -1917,17 +2006,13 @@
     "languages" : [ "Java" ],
     "enabled" : true
   }, {
-    "patternId" : "category_java_errorprone_AvoidCatchingNPE",
+    "patternId" : "category_java_errorprone_AvoidCatchingGenericException",
     "level" : "Warning",
     "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_java_errorprone_AvoidCatchingThrowable",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
+    "parameters" : [ {
+      "name" : "typesThatShouldNotBeCaught",
+      "default" : "java.lang.NullPointerException,\n                    java.lang.Exception,\n                    java.lang.RuntimeException,\n                    java.lang.Throwable,\n                    java.lang.Error"
+    } ],
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
@@ -1983,13 +2068,6 @@
       "name" : "ignoreMagicNumbers",
       "default" : "-1,0"
     } ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_java_errorprone_AvoidLosingExceptionInformation",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
@@ -2070,6 +2148,13 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
+    "patternId" : "category_java_errorprone_CollectionTypeMismatch",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_errorprone_CompareObjectsWithEquals",
     "level" : "Warning",
     "category" : "ErrorProne",
@@ -2137,13 +2222,6 @@
     "enabled" : false
   }, {
     "patternId" : "category_java_errorprone_DoNotThrowExceptionInFinally",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_java_errorprone_DontImportSun",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -2219,6 +2297,13 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
+    "patternId" : "category_java_errorprone_IdenticalConditionalBranches",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_errorprone_ImplicitSwitchFallThrough",
     "level" : "Warning",
     "category" : "ErrorProne",
@@ -2234,6 +2319,13 @@
     "enabled" : false
   }, {
     "patternId" : "category_java_errorprone_InvalidLogMessageFormat",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_errorprone_JUnitJupiterTestNoPrivateModifier",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -2321,6 +2413,13 @@
     "enabled" : true
   }, {
     "patternId" : "category_java_errorprone_NullAssignment",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_errorprone_OverrideBothEqualsAndHashCodeOnComparable",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -2476,6 +2575,13 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
+    "patternId" : "category_java_errorprone_UnsupportedJdkApiUsage",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_errorprone_UnusedNullCheckInEquals",
     "level" : "Warning",
     "category" : "ErrorProne",
@@ -2511,12 +2617,19 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_errorprone_UselessOperationOnImmutable",
+    "patternId" : "category_java_errorprone_UselessPureMethodCall",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
     "languages" : [ "Java" ],
-    "enabled" : true
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_errorprone_WrongTestAnnotation",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
   }, {
     "patternId" : "category_java_multithreading_AvoidSynchronizedAtMethodLevel",
     "level" : "Warning",
@@ -2568,6 +2681,13 @@
     "enabled" : false
   }, {
     "patternId" : "category_java_multithreading_NonThreadSafeSingleton",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_multithreading_OverridingThreadRun",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -2879,6 +2999,13 @@
     "languages" : [ "Kotlin" ],
     "enabled" : false
   }, {
+    "patternId" : "category_kotlin_bestpractices_LocalVariableShadowsParameter",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ "Kotlin" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_kotlin_errorprone_OverrideBothEqualsAndHashcode",
     "level" : "Warning",
     "category" : "ErrorProne",
@@ -2944,42 +3071,7 @@
     "languages" : [ "PLSQL" ],
     "enabled" : false
   }, {
-    "patternId" : "category_plsql_design_ExcessiveMethodLength",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "PLSQL" ],
-    "enabled" : true
-  }, {
-    "patternId" : "category_plsql_design_ExcessiveObjectLength",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "PLSQL" ],
-    "enabled" : true
-  }, {
-    "patternId" : "category_plsql_design_ExcessivePackageBodyLength",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "PLSQL" ],
-    "enabled" : true
-  }, {
-    "patternId" : "category_plsql_design_ExcessivePackageSpecificationLength",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "PLSQL" ],
-    "enabled" : true
-  }, {
     "patternId" : "category_plsql_design_ExcessiveParameterList",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "PLSQL" ],
-    "enabled" : true
-  }, {
-    "patternId" : "category_plsql_design_ExcessiveTypeLength",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -2993,14 +3085,7 @@
     "languages" : [ "PLSQL" ],
     "enabled" : false
   }, {
-    "patternId" : "category_plsql_design_NcssMethodCount",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "PLSQL" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_plsql_design_NcssObjectCount",
+    "patternId" : "category_plsql_design_NcssCount",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],

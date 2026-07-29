@@ -12,6 +12,12 @@ Note: Since PMD 6.16.0 the default value for the property `types` contains `java
 now cases where the standard `java.io.*Stream` classes are involved. In order to restore the old behaviour,
 just remove &quot;AutoCloseable&quot; from the types.
 
+The property `allowedResourceMethodPatterns` can be used to specify method invocation patterns that return
+resources which are managed externally and don't need to be closed by the caller. This is useful for
+servlet-related streams like `HttpServletRequest.getReader()` or `HttpServletResponse.getWriter()`,
+which are managed by the servlet container. The patterns use InvocationMatcher syntax
+(e.g., `javax.servlet.ServletRequest#getReader()`).
+
 Example(s):
 ```
 public class Bar {

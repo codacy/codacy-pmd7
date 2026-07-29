@@ -6,7 +6,7 @@ Many interfaces (e.g. Batch) required global modifiers in the past but don't req
 Example(s):
 ```
 global class Unchangeable {
-    global UndeletableType unchangable(UndeletableType param) {
+    global UndeletableType unchangeable(UndeletableType param) {
         // ...
     }
 }
