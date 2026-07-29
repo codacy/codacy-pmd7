@@ -1,12 +1,14 @@
 Since: PMD 6.35.0
 
-Reports JUnit 5 test classes and methods that are not package-private.
+Reports JUnit Jupiter test classes and methods that are not package-private.
 Contrary to JUnit 4 tests, which required public visibility to be run by the engine,
-JUnit 5 tests can also be run if they're package-private. Marking them as such
+JUnit Jupiter tests can also be run if they're package-private. Marking them as such
 is a good practice to limit their visibility.
 
 Test methods are identified as those which use `@Test`, `@RepeatedTest`,
 `@TestFactory`, `@TestTemplate` or `@ParameterizedTest`.
+
+Note: This rule was named `JUnit5TestShouldBePackagePrivate` before PMD 7.25.0.
 
 Example(s):
 ```

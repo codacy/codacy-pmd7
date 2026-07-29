@@ -6,7 +6,7 @@ the volatile keyword should not be used for maintenance purpose and portability.
 
 Example(s):
 ```
-public class ThrDeux {
+public class Data {
   private volatile String var1; // not suggested
   private          String var2; // preferred
 }

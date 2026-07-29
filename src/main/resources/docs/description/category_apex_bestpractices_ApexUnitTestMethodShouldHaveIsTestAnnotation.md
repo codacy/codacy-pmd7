@@ -2,7 +2,7 @@ Since: PMD 6.13.0
 
 Apex test methods should have `@isTest` annotation instead of the `testMethod` keyword,
 as `testMethod` is deprecated.
-Salesforce advices to use [@isTest](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation_isTest.htm)
+Salesforce advises to use [@isTest](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation_isTest.htm)
 annotation for test classes and methods.
 
 Example(s):

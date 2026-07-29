@@ -1,6 +1,6 @@
 Since: PMD 5.0
 
-This rule helps to avoid using accidently global variables by simply missing the &quot;var&quot; declaration.
+This rule helps to avoid using accidentally global variables by simply missing the &quot;var&quot; declaration.
 Global variables can lead to side-effects that are hard to debug.
 
 Example(s):

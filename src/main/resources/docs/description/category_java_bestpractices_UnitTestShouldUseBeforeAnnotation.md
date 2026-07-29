@@ -6,7 +6,7 @@ To a lesser extent, this may help detect omissions even under newer JUnit versio
 as long as you are following this convention to name the methods.
 
 * JUnit 4 will only execute methods annotated with `@Before` before all tests.
-* JUnit 5 introduced `@BeforeEach` and `@BeforeAll` annotations to execute methods before each test or before all
+* JUnit Jupiter introduced `@BeforeEach` and `@BeforeAll` annotations to execute methods before each test or before all
   tests in the class, respectively.
 * TestNG provides the annotations `@BeforeMethod` and `@BeforeClass` to execute methods before each test or before
   tests in the class, respectively.

@@ -1,10 +1,14 @@
 Since: PMD 7.16.0
 
-The legacy java.util.Calendar API is error-prone, mutable, and not thread-safe. It has confusing month indexing 
-(January = 0), inconsistent field semantics, and verbose usage patterns. The modern java.time API (introduced in Java 8) 
-provides immutable, thread-safe alternatives with clear, intuitive methods.
+The legacy `java.util.Calendar` API is error-prone, mutable, and not thread-safe. It has confusing month indexing
+(January = 0), inconsistent field semantics, and verbose usage patterns. The modern `java.time API`
+(introduced in Java 8) provides immutable, thread-safe alternatives with clear, intuitive methods.
 
-Use LocalDate (for date-only operations), LocalDateTime (for date and time), or ZonedDateTime (when timezone is important) from java.time package instead.
+Use `LocalDate` (for date-only operations), `LocalDateTime` (for date and time), or `ZonedDateTime`
+(when timezone is important) from `java.time` package instead.
+
+Note: Since JPA 3.2 (Jakarta Persistence) usage of `java.util.Date` and `java.util.Calendar` and others is
+deprecated there as well in favour of `java.time` API.
 
 Example(s):
 ```

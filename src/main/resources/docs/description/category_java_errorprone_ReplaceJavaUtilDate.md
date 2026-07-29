@@ -1,12 +1,17 @@
 Since: PMD 7.16.0
 
-The legacy java.util.Date class is mutable, not thread-safe, and has a confusing API. Many of its methods 
-are deprecated, it doesn't handle timezones properly, and it represents both date and time even when only 
-one is needed. The constructor parameters are particularly error-prone: year is &quot;years since 1900&quot; and 
-month is 0-based (January = 0). The modern java.time API (introduced in Java 8) provides better type safety, immutability, and clearer semantics.
+The legacy `java.util.Date` class is mutable, not thread-safe, and has a confusing API. Many of its methods
+are deprecated, it doesn't handle timezones properly, and it represents both date and time even when only
+one is needed. The constructor parameters are particularly error-prone: year is &quot;years since 1900&quot; and
+month is 0-based (January = 0). The modern java.time API (introduced in Java 8) provides better type safety,
+immutability, and clearer semantics.
 
-Use LocalDate (date only), LocalTime (time only), LocalDateTime (date and time), Instant (timestamp), 
-or ZonedDateTime (date-time with timezone) from java.time package instead.
+Use `LocalDate` (date only), `LocalTime` (time only), `LocalDateTime` (date and time), `Instant` (timestamp),
+or `ZonedDateTime` (date-time with timezone) from `java.time` package instead.
+
+Note: This includes subtypes such as `java.sql.Date`, `java.sql.Time` and `java.sql.Timestamp`.
+Since JPA 3.2 (Jakarta Persistence) usage of `java.util.Date` and `java.util.Calendar` and others is
+deprecated there as well in favour of `java.time` API.
 
 Example(s):
 ```

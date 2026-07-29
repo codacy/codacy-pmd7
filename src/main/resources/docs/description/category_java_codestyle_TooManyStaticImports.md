@@ -5,6 +5,8 @@ unmaintainable, polluting its namespace with all the static members you import.
 Readers of your code (including you, a few months after you wrote it) will not know
 which class a static member comes from (Sun 1.5 Language Guide).
 
+The rule reports the first static import in the file if there are more than `maximumStaticImports` in total.
+
 Example(s):
 ```
 import static Lennon;

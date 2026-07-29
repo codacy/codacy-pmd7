@@ -6,7 +6,7 @@ To a lesser extent, this may help detect omissions even under newer JUnit versio
 as long as you are following this convention to name the methods.
 
 * JUnit 4 will only execute methods annotated with `@After` after running each test.
-* JUnit 5 introduced `@AfterEach` and `@AfterAll` annotations to execute methods after each test or after
+* JUnit Jupiter introduced `@AfterEach` and `@AfterAll` annotations to execute methods after each test or after
   all tests in the class, respectively.
 * TestNG provides the annotations `@AfterMethod` and `@AfterClass` to execute methods after each test or after
   tests in the class, respectively.

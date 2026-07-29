@@ -1,8 +1,8 @@
 Since: PMD 5.6.0
 
 Avoid using if..else statements without using surrounding braces. If the code formatting
-or indentation is lost then it becomes difficult to separate the code being controlled
-from the rest.
+            or indentation is lost then it becomes difficult to separate the code being controlled
+            from the rest.
 
 Example(s):
 ```
