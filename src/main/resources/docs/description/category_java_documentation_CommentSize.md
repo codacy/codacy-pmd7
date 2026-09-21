@@ -4,20 +4,15 @@ Determines whether the dimensions of non-header comments found are within the sp
 
 Example(s):
 ```
-/**
-*
-*   too many lines!
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*/
+public class Foo {
+    /*
+     * 1
+     * 2
+     * 3
+     * 4
+     * 5
+     * 6
+     * 7
+     */
+}
 ```

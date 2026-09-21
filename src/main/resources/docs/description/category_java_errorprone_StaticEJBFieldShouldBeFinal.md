@@ -12,4 +12,12 @@ public class SomeEJB extends EJBObject implements EJBLocalHome {
 
     private static final int CountB;    // preferred, read-only access
 }
+
+// Since EJB 3.0, components may be declared with @Stateless / @Stateful /
+// @Singleton / @MessageDriven instead of implementing an EJB interface.
+@Stateless
+public class MySessionBean {
+
+    private static int CountC;          // poor, field can be edited
+}
 ```

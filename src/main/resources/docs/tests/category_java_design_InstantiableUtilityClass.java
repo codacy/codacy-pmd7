@@ -1,6 +1,6 @@
-//#Patterns: category_java_design_UseUtilityClass
+//#Patterns: category_java_design_InstantiableUtilityClass
 
-//#Warn: category_java_design_UseUtilityClass
+//#Warn: category_java_design_InstantiableUtilityClass
 public class MaybeAUtility {
   public static void foo() {}
   public static void bar() {}
