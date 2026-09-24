@@ -1,6 +1,6 @@
 {
   "name" : "pmd7",
-  "version" : "7.26.0",
+  "version" : "7.27.0",
   "patterns" : [ {
     "patternId" : "category_apex_bestpractices_ApexAssertionsShouldIncludeMessage",
     "level" : "Warning",
@@ -1114,20 +1114,6 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
-    "patternId" : "category_java_codestyle_AvoidProtectedFieldInFinalClass",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_java_codestyle_AvoidProtectedMethodInFinalClassNotExtending",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
     "patternId" : "category_java_codestyle_AvoidUsingNativeCode",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1141,6 +1127,9 @@
     "parameters" : [ {
       "name" : "checkParameterizedMethods",
       "default" : "false"
+    }, {
+      "name" : "includeWrappedType",
+      "default" : "true"
     } ],
     "languages" : [ "Java" ],
     "enabled" : false
@@ -1773,6 +1762,13 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
+    "patternId" : "category_java_design_InstantiableUtilityClass",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_design_InvalidJavaBean",
     "level" : "Warning",
     "category" : "ErrorProne",
@@ -1816,6 +1812,13 @@
     "enabled" : true
   }, {
     "patternId" : "category_java_design_NcssCount",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
+    "patternId" : "category_java_design_ProtectedMemberInFinalClass",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],
@@ -1895,13 +1898,6 @@
       "name" : "maxmethods",
       "default" : "10"
     } ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_java_design_UseUtilityClass",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
@@ -2105,13 +2101,6 @@
     "parameters" : [ ],
     "languages" : [ "Java" ],
     "enabled" : false
-  }, {
-    "patternId" : "category_java_errorprone_CheckSkipResult",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : true
   }, {
     "patternId" : "category_java_errorprone_ClassCastExceptionWithToArray",
     "level" : "Warning",
@@ -2589,6 +2578,13 @@
     "languages" : [ "Java" ],
     "enabled" : false
   }, {
+    "patternId" : "category_java_errorprone_UnusedReturnValue",
+    "level" : "Warning",
+    "category" : "ErrorProne",
+    "parameters" : [ ],
+    "languages" : [ "Java" ],
+    "enabled" : false
+  }, {
     "patternId" : "category_java_errorprone_UseCorrectExceptionLogging",
     "level" : "Warning",
     "category" : "ErrorProne",
@@ -2611,13 +2607,6 @@
     "enabled" : false
   }, {
     "patternId" : "category_java_errorprone_UseProperClassLoader",
-    "level" : "Warning",
-    "category" : "ErrorProne",
-    "parameters" : [ ],
-    "languages" : [ "Java" ],
-    "enabled" : false
-  }, {
-    "patternId" : "category_java_errorprone_UselessPureMethodCall",
     "level" : "Warning",
     "category" : "ErrorProne",
     "parameters" : [ ],

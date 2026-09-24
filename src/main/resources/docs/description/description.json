@@ -475,11 +475,6 @@
   "description" : "The annotation {0} is from {1}, your codebase is using {2}.",
   "parameters" : [ ]
 }, {
-  "patternId" : "category_java_errorprone_UselessPureMethodCall",
-  "title" : "Useless Pure Method Call",
-  "description" : "Do not call pure method {0} if the result is not used.",
-  "parameters" : [ ]
-}, {
   "patternId" : "category_java_errorprone_UseProperClassLoader",
   "title" : "Use Proper Class Loader",
   "description" : "In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.",
@@ -498,6 +493,11 @@
   "patternId" : "category_java_errorprone_UseCorrectExceptionLogging",
   "title" : "Use Correct Exception Logging",
   "description" : "Use the correct logging statement for logging exceptions",
+  "parameters" : [ ]
+}, {
+  "patternId" : "category_java_errorprone_UnusedReturnValue",
+  "title" : "Unused Return Value",
+  "description" : "Result of ''{0}'' is ignored.",
   "parameters" : [ ]
 }, {
   "patternId" : "category_java_errorprone_UnusedNullCheckInEquals",
@@ -846,11 +846,6 @@
   "description" : "This usage of the Collection.toArray() method will throw a ClassCastException.",
   "parameters" : [ ]
 }, {
-  "patternId" : "category_java_errorprone_CheckSkipResult",
-  "title" : "Check Skip Result",
-  "description" : "Check the value returned by the skip() method of an InputStream to see if the requested number of bytes has been skipped.",
-  "parameters" : [ ]
-}, {
   "patternId" : "category_java_errorprone_CallSuperLast",
   "title" : "Call Super Last",
   "description" : "super should be called at the end of the method",
@@ -998,11 +993,6 @@
   "description" : "Overriding method merely calls super",
   "parameters" : [ ]
 }, {
-  "patternId" : "category_java_design_UseUtilityClass",
-  "title" : "Use Utility Class",
-  "description" : "All members are static. Consider adding a private no-args constructor to prevent instantiation.",
-  "parameters" : [ ]
-}, {
   "patternId" : "category_java_design_TooManyMethods",
   "title" : "Too Many Methods",
   "description" : "This class has too many methods, consider refactoring it.",
@@ -1059,6 +1049,11 @@
   "description" : "Public member ''{0}'' declared in a non-public type",
   "parameters" : [ ]
 }, {
+  "patternId" : "category_java_design_ProtectedMemberInFinalClass",
+  "title" : "Protected Member In Final Class",
+  "description" : "Avoid protected members in a final class. Change to private or package access.",
+  "parameters" : [ ]
+}, {
   "patternId" : "category_java_design_NcssCount",
   "title" : "NCSS Count",
   "description" : "The {0} ''{1}'' has a NCSS line count of {2}.",
@@ -1092,6 +1087,11 @@
   "patternId" : "category_java_design_InvalidJavaBean",
   "title" : "Invalid Java Bean",
   "description" : "The bean ''{0}'' is missing a getter for property ''{1}''.",
+  "parameters" : [ ]
+}, {
+  "patternId" : "category_java_design_InstantiableUtilityClass",
+  "title" : "Instantiable Utility Class",
+  "description" : "All members are static. Consider adding a private no-args constructor to prevent instantiation.",
   "parameters" : [ ]
 }, {
   "patternId" : "category_java_design_ImmutableField",
@@ -1576,21 +1576,14 @@
   "parameters" : [ {
     "name" : "checkParameterizedMethods",
     "description" : "Check parameterized methods"
+  }, {
+    "name" : "includeWrappedType",
+    "description" : "Include methods returning the Boolean wrapper type"
   } ]
 }, {
   "patternId" : "category_java_codestyle_AvoidUsingNativeCode",
   "title" : "Avoid Using Native Code",
   "description" : "The use of native code is not recommended.",
-  "parameters" : [ ]
-}, {
-  "patternId" : "category_java_codestyle_AvoidProtectedMethodInFinalClassNotExtending",
-  "title" : "Avoid Protected Method In Final Class Not Extending",
-  "description" : "Avoid protected methods in a final class that doesn't extend anything other than Object.  Change to private or package access.",
-  "parameters" : [ ]
-}, {
-  "patternId" : "category_java_codestyle_AvoidProtectedFieldInFinalClass",
-  "title" : "Avoid Protected Field In Final Class",
-  "description" : "Avoid protected fields in a final class.  Change to private or package access.",
   "parameters" : [ ]
 }, {
   "patternId" : "category_java_codestyle_AvoidDollarSigns",

@@ -12,8 +12,8 @@ public class Test {
 
     public void method(String a) {
         String b;
-        // I don't know it method1() can be "null"
-        // but I know "a" is not null..
+        // I don't know if method1() can be "null"
+        // but I know "a" is not null.
         // I'd better write a.equals(method1())
 
         if (a!=null && method1().equals(a)) { // will trigger the rule
